@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>currency converter</title>
+</head>
+<body>
+    <p>Enter the amount <input id="amount" type="text"></p>
+    <h3>From</h3>
+    <select name="country" id="source_country">
+        <option value="blank">please select source country</option>
+  <option value="ind">India</option>
+  <option value="us">us</option>
+  <option value="bng">bangladesh</option>
+  <option value="pak">pakistan</option>
+  <option value="chi">china</option>
+  </select>
+  <h3>To</h3>
+    <select name="country" id="Destination_country">
+        <option value="blan">please select Destination country</option>
+  <option value="ind">India</option>
+  <option value="us">us</option>
+  <option value="bng">bangladesh</option>
+  <option value="pak">pakistan</option>
+  <option value="chi">china</option>
+  </select>
+  <p>Converted value</p>
+  <h3 id="output">$400</h3>
+  <button onclick="myFunction()" id="button">Generate</button>
+
+</body>
+</html>
+
+  <script type = "text/javascript">     
+function myFunction()
+{
+   var number=document.getElementById("amount").value; 
+   var source_e = document.getElementById("source_country");
+   var source_country = source_e.value;
+   var destination_e = document.getElementById("Destination_country");
+   var destination_country = destination_e.value;
+    if(number =='')
+   {
+    alert('you have to put some value')
+   }
+
+   if(source_country == 'blank'){
+    alert('choose a country')
+   }
+
+   if(source_country=='ind' && destination_country=='ind')
+   {
+    alert('same countryn should not be used')
+   }
+   if(source_country=='ind' && destination_country=='us')
+   {
+    var dollar=number/80
+   document.getElementById("output").innerHTML = dollar;
+   }
+
+  if(source_country=='ind' && destination_country=='bng')
+   {
+    var bng=number*1.2
+   document.getElementById("output").innerHTML = bng;
+   }
+   
+  if(source_country=='ind' && destination_country=='pak')
+   {
+    var pak=number*10
+   document.getElementById("output").innerHTML = pak;
+   }
+   
+  
+}
+</script>
